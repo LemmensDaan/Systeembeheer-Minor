@@ -10,7 +10,9 @@
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
-#Port 22
+Port 22
+Port 22345
+ 
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
@@ -51,6 +53,9 @@ PermitRootLogin yes
 #IgnoreUserKnownHosts no
 # Don't read the user's ~/.rhosts and ~/.shosts files
 #IgnoreRhosts yes
+
+UseDS no
+
 
 # To disable tunneled clear text passwords, change to no here!
 #PasswordAuthentication yes
