@@ -1,0 +1,3 @@
+#!/bin/bash
+
+while read i; do od --address-radix=n --width=$(wc -c <<< "$i") -c <<< "$i" | tr -d ' '; done < $1 | grep --color '\\.'
