@@ -1,2 +1,2 @@
-#! / Bin / sh
-arp -i eth0 -s 193.191.177.254 0A: 30: 5A: 4D: 0B: D0
+#!/bin/sh
+arp -i eth0 -s 193.191.177.254 ca:fe:c0:ff:ee:00 
