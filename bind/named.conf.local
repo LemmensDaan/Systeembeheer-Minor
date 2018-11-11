@@ -18,3 +18,5 @@ zone "daan-lemmens.sb.uclllabs.be" {
 //	file "/etc/bind/zones/db.domien-gillard.sb.uclllabs.be";
 //	masters { 193.191.177.172; };
 //};
+;
+
