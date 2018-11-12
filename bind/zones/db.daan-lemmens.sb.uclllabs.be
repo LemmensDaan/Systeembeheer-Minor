@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.daan-lemmens.sb.uclllabs.be. root.daan-lemmens.sb.uclllabs.be. (
-			      3		; Serial
+			     13		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
