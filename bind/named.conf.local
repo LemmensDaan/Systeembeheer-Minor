@@ -15,7 +15,7 @@ zone "daan-lemmens.sb.uclllabs.be" {
 
 zone "domien-gillard.sb.uclllabs.be" {
 	type slave;
-	file "/etc/bind/zones/slaves/db.domien-gillard.sb.uclllabs.be";
+	file "/etc/bind/zones/db.domien-gillard.sb.uclllabs.be";
 	masters { 193.191.177.146; };
 };
 
