@@ -10,13 +10,12 @@ zone "daan-lemmens.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/zones/db.daan-lemmens.sb.uclllabs.be";
 	notify yes;
-	allow-transfer {193.191.176.254; 193.191.177.4; 193.191.177.172; 193.191.177.254;};
+	allow-transfer {193.191.176.254; 193.191.177.4; 193.191.177.146; 193.191.177.254;};
 };
 
-//zone "domien-gillard.sb.uclllabs.be" {
-//	type slave;
-//	file "/etc/bind/zones/db.domien-gillard.sb.uclllabs.be";
-//	masters { 193.191.177.172; };
-//};
-;
+zone "domien-gillard.sb.uclllabs.be" {
+	type slave;
+	file "/etc/bind/zones/slaves/db.domien-gillard.sb.uclllabs.be";
+	masters { 193.191.177.146; };
+};
 
