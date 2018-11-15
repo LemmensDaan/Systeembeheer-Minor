@@ -1,2 +1,30 @@
 #!/bin/bash
+if [ -n "$1" ]; then
+	#add the new zone in the placeholder, place this text into my master zone file
+	sed "s/zone-placeholder/$1/g" /etc/bind/zones/.db.zone-template > /etc/bind/zones/db."$1".daan-lemmens.sb.uclllabs.be
+	#add zone to local
+	sed "s/record-placeholder/$1/g" /etc/bind/.add_named.conf.local >> /etc/bind/named.conf.local
+	#add record to master zone file
+	printf "\n$1	IN	NS	ns.daan-lemmens.sb.uclllabs.be.\n" >> /etc/bind/zones/db.daan-lemmens.sb.uclllabs.be
+	
+	#increment serial
+	SERIAL_NUM=$(grep -Po '\d+(?=\s; Serial)' db.daan-lemmens.sb.uclllabs.be)
+	SERIAL_LIN=$(grep -Po '\s+; Serial' db.daan-lemmens.sb.uclllabs.be)
+	SERIAL_ALL=$(grep -Po '\d+\s+; Serial' db.daan-lemmens.sb.uclllabs.be)
+	NEW_NUM=$(("$SERIAL_NUM" + 1))
+	#on place SERIAL_ALL replace with the incremented number and SERIAL_LIN
+	sed -i "s/$SERIAL_ALL/$NEW_NUM$SERIAL_LIN/g" db.daan-lemmens.sb.uclllabs.be
+	
+	rndc reload
+	systemctl restart bind9
+
+else
+	printf "Please give in a name for your new dns zone"
+fi
+
+
+#SERIAL_NUM	=	the serial number
+#SERIAL_LIN	=	; Serial	(with whitespace)
+#SERIAL_ALL	=	the whole line where serial is located
+#WEN_NUM	=	incrementing the serial number
 
