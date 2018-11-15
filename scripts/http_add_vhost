@@ -1,0 +1,25 @@
+#!/bin/bash
+ZONE=$(grep -Po '.{1,}(?=.daan-lemmens.sb.uclllabs.be)' <<< "$1")
+#POL=$(cut -d. -f2 <<< "$1")
+#P1=$(cut -d. -f1 <<< "$1")
+ZONEFILE=$(cut -d. -f2- <<< "$1")
+EXIST=$(grep -P '^"$ZONE"\s' /etc/bind/zones/db."$ZONEFILE" | wc -l)
+
+if [ "$EXIST" > 0 ]; then
+	#copy ZIE DIT NOG, CONTENTS MET INDEX.HTML ERBIJ KOPIEREN??
+	cp -r /var/www/html/.index_template /var/www/html/"$ZONE"
+	sed "s/TEMPLATECHANGETHIS/$ZONE/g" /etc/apache2/sites-available/.vhost_template_http.conf > /etc/apache2/sites-available/000-"$ZONE".conf
+	a2ensite 000-"$ZONE".conf
+	systemctl reload apache2
+
+else
+	echo "Sorry, this zone doesn't exist. OR record doesn't exist in this zone."
+	exit 1
+fi
+
+
+#ZONE		=	name of vhost	=> eg.		test.daan-lemmens.sb.uclllabs.be	=> 	ZONE=test
+#POL		=	daan-lemmens
+#PI		=	test
+#ZONEFILE	=	daan-lemmens.sb.uclllabs.be		(zonefile of dns)
+#EXIST		=	telt het aantal lines waardat bv test in voorkomt
