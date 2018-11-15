@@ -8,7 +8,7 @@ if [ -n "$1" ]; then
 	printf "\n$1	IN	NS	ns.daan-lemmens.sb.uclllabs.be.\n" >> /etc/bind/zones/db.daan-lemmens.sb.uclllabs.be
 	
 	#increment serial
-	SERIAL_NUM=$(grep -Po '\d+(?=\s; Serial)' db.daan-lemmens.sb.uclllabs.be)
+	SERIAL_NUM=$(grep -Po '\d+(?=\s+; Serial)' db.daan-lemmens.sb.uclllabs.be)
 	SERIAL_LIN=$(grep -Po '\s+; Serial' db.daan-lemmens.sb.uclllabs.be)
 	SERIAL_ALL=$(grep -Po '\d+\s+; Serial' db.daan-lemmens.sb.uclllabs.be)
 	NEW_NUM=$(("$SERIAL_NUM" + 1))
