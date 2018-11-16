@@ -8,7 +8,7 @@ EXIST=$(grep -P '^"$ZONE"\s' /etc/bind/zones/db."$ZONEFILE" | wc -l)
 if [ "$EXIST" > 0 ]; then
 	#copy ZIE DIT NOG, CONTENTS MET INDEX.HTML ERBIJ KOPIEREN??
 	cp -r /var/www/html/.index_template /var/www/html/"$ZONE"
-	sed "s/TEMPLATECHANGETHIS/$ZONE/g" /etc/apache2/sites-available/.vhost_template_http.conf > /etc/apache2/sites-available/000-"$ZONE".conf
+	sed "s/placeholder/$ZONE/g" /etc/apache2/sites-available/.vhost_template_http.conf > /etc/apache2/sites-available/000-"$ZONE".conf
 	a2ensite 000-"$ZONE".conf
 	systemctl reload apache2
 
