@@ -4,7 +4,7 @@
 $ORIGIN foobar.daan-lemmens.sb.uclllabs.be.
 $TTL	604800
 @	IN	SOA	ns.foobar.daan-lemmens.sb.uclllabs.be root.foobar.daan-lemmens.sb.uclllabs.be. (
-				11		; Serial
+				14		; Serial
 				604800		; Refresh
 				86400		; Retry
 				2419200		; Expire
@@ -34,3 +34,9 @@ mail2test	IN	A	193.191.177.142
 @	IN	MX	10	mail3test.foobar.daan-lemmens.sb.uclllabs.be.
 
 mail3test	IN	A	193.191.177.142
+
+cnametest	IN	CNAME	foobar.daan-lemmens.sb.uclllabs.be.
+
+@	IN	MX	10	mail2.foobar.daan-lemmens.sb.uclllabs.be.
+
+mail2	IN	A	193.191.177.142

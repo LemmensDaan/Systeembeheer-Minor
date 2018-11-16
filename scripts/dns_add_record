@@ -12,10 +12,8 @@ if [ -n "$1" ]; then
 				ZONEFILE="/etc/bind/zones/db.$5"
 				;;
 			CNAME )
-				#eg.	www.daan-lemmens.sb.uclllabs.be		=>	daan-lemmens.sb.uclllabs.be
-				MASTERZONE=$(cut -d. -f2- "$4")
-				ZONEFILE="/etc/bind/zones/db.$MASTERZONE"
-				printf "\n$3	IN	CNAME	$4\n" >> "$ZONEFILE"
+				ZONEFILE="/etc/bind/zones/db.$4"
+				printf "\n$3	IN	CNAME	$4.\n" >> "$ZONEFILE"
 				;;
 		esac
 	else
