@@ -23,6 +23,10 @@ root	ALL=(ALL:ALL) ALL
 %sudo	ALL=(ALL:ALL) ALL
 check ALL=(ALL) NOPASSWD: /usr/lib/nagios/plugins/check_apt
 check ALL=(ALL) NOPASSWD: /usr/sbin/arp
+
+#check can execute command as root
+check ALL=(ALL) NOPASSWD: /usr/local/bin/dns_add_zone
+check ALL=(ALL) NOPASSWD: /usr/local/bin/dns_add_record
 # See sudoers(5) for more information on "#include" directives:
 
 #includedir /etc/sudoers.d
