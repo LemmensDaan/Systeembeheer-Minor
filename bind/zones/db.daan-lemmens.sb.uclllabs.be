@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.daan-lemmens.sb.uclllabs.be. root.daan-lemmens.sb.uclllabs.be. (
-			     34		; Serial
+			     39		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -13,6 +13,7 @@ $TTL	604800
 @	IN	NS	ns1.uclllabs.be.
 @	IN	NS	ns2.uclllabs.be.
 @	IN	NS	ns.domien-gillard.sb.uclllabs.be.
+@	IN	NS	ns.tom-lemmens.sb.uclllabs.be.
 ;
 ns	IN	A	193.191.177.142
 
@@ -30,12 +31,9 @@ mx	IN	A	193.191.177.142
 @	IN	CAA	0 issue "letsencrypt.org"
 @	IN	CAA	0 iodef "mailto:daan.lemmens@student.ucll.be"
 
-foobar	IN	NS	ns.daan-lemmens.sb.uclllabs.be.
-
-www3	IN	A	193.191.177.142
-
-www4	IN	A	193.191.177.142
-
 secure	IN	A	193.191.177.142
 
 supersecure	IN	A	193.191.177.142
+
+
+subzoneugh7ie	IN	NS	ns.daan-lemmens.sb.uclllabs.be.

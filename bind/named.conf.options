@@ -1,7 +1,7 @@
 options {
 	directory "/var/cache/bind";
 	recursion no;
-	allow-transfer { localhost; 193.191.176.254; 193.191.177.4; 193.191.177.254; 193.191.177.146;};
+	allow-transfer { localhost; 193.191.176.254; 193.191.177.4; 193.191.177.254; 193.191.177.146; 193.191.177.195; };
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple

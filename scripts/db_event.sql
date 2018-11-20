@@ -1,16 +1,12 @@
 DELIMITER //
 
 USE check
-CREATE TRIGGER trigger1
-AFTER INSERT 
-ON log FOR EACH ROW
-
-	BEGIN
+CREATE EVENT event1
+	ON SCHEDULE EVERY 1 MINUTE
+	DO
 		SELECT COUNT(*) INTO @nr_rows FROM log;
 		IF @nr_rows >= 95 THEN
 			DELETE FROM log ORDER BY date ASC limit 10;
 		END IF;
-	END; //
 
 DELIMITER ;
-
