@@ -33,3 +33,12 @@ zone "subzoneugh7ie.daan-lemmens.sb.uclllabs.be" {
 	allow-transfer {193.191.175.254; 193.191.177.4; 193.191.177.254; 193.191.177.146; 193.191.177.142;};
 };
 
+
+
+zone "subzoneno8luw.daan-lemmens.sb.uclllabs.be" {
+	type master;
+	file "/etc/bind/zones/db.subzoneno8luw.daan-lemmens.sb.uclllabs.be";
+	notify yes;
+	allow-transfer {193.191.175.254; 193.191.177.4; 193.191.177.254; 193.191.177.146; 193.191.177.142;};
+};
+

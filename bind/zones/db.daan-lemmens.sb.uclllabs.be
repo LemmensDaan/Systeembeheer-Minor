@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.daan-lemmens.sb.uclllabs.be. root.daan-lemmens.sb.uclllabs.be. (
-			     39		; Serial
+			     44		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -37,3 +37,5 @@ supersecure	IN	A	193.191.177.142
 
 
 subzoneugh7ie	IN	NS	ns.daan-lemmens.sb.uclllabs.be.
+
+subzoneno8luw	IN	NS	ns.daan-lemmens.sb.uclllabs.be.

@@ -13,6 +13,7 @@ EXIST=$(grep -P "$SEARCH" /etc/bind/zones/db."$ZONEFILE" | wc -l)
 echo $EXIST
 if [ "$EXIST" -gt  0 ]; then
 	cp -r /var/www/html/.index_template /var/www/html/"$ZONE"
+	sed "s/placeholder/$ZONE/g" /var/www/html/.index_template/index.html > /var/www/html/"$ZONE"/index.html
 	sed "s/placeholder/$ZONE/g" /etc/apache2/sites-available/.vhost_template_http.conf > /etc/apache2/sites-available/"$ZONE".conf
 	a2ensite "$ZONE".conf
 	systemctl reload apache2
