@@ -10,7 +10,7 @@
 
 # this is only for the mysqld standalone daemon
 [mysqld]
-
+event_scheduler = on
 #
 # * Basic Settings
 #
