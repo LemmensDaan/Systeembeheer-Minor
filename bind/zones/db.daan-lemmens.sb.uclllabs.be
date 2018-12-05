@@ -1,13 +1,13 @@
 ;
 ; BIND data file for local loopback interface
 ;
-$TTL	604800
+$TTL	300
 @	IN	SOA	ns.daan-lemmens.sb.uclllabs.be. root.daan-lemmens.sb.uclllabs.be. (
-			     47		; Serial
+			     50		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
-			 604800 )	; Negative Cache TTL
+			 300 )	; Negative Cache TTL
 ;
 @	IN	NS	ns.daan-lemmens.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
