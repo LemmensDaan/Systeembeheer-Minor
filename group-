@@ -59,3 +59,5 @@ mysql:x:118:
 dovecot:x:119:
 dovenull:x:120:
 vmail:x:5000:
+stunnel4:x:121:
+ftp:x:122:

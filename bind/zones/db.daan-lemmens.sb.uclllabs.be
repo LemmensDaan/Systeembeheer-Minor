@@ -3,7 +3,7 @@
 ;
 $TTL	300
 @	IN	SOA	ns.daan-lemmens.sb.uclllabs.be. root.daan-lemmens.sb.uclllabs.be. (
-			     50		; Serial
+			     51		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -28,6 +28,7 @@ mx	IN	A	193.191.177.142
 
 @	IN	AAAA	2001:6a8:2880:a077::8e	
 ns	IN	AAAA	2001:6a8:2880:a077::8e
+mx	IN	AAAA	2001:6a8:2880:a077::8e
 
 @	IN	MX	10	mx
 

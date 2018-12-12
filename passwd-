@@ -33,3 +33,6 @@ mysql:x:112:118:MySQL Server,,,:/nonexistent:/bin/false
 dovecot:x:113:119:Dovecot mail server,,,:/usr/lib/dovecot:/bin/false
 dovenull:x:114:120:Dovecot login user,,,:/nonexistent:/bin/false
 vmail:x:5000:5000::/var/mail:
+stunnel4:x:115:121::/var/run/stunnel4:/bin/false
+ftp:x:116:122:ftp daemon,,,:/srv/ftp:/bin/false
+mystery1_2014:x:1001:1001::/home/mystery1_2014:/bin/bash
